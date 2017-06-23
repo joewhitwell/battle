@@ -26,6 +26,16 @@ describe "View hit points" do
   end
 end
 
+describe "Confirmation message" do
+  feature "should confrim that player 1 attacked player 2" do
+    scenario "when the Play button is clicked" do
+      sign_in_and_play
+      click_button('Attack')
+      expect(page).to have_content 'Player 1 attacked Player 2'
+    end
+  end
+end
+
 
 
 # fill_in 'Title', with: 'I love Rails!'

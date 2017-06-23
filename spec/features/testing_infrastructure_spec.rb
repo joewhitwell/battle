@@ -11,9 +11,7 @@ end
 describe "Render name" do
   feature "post names to /fight page" do
     scenario "Enter name, and view on fight page" do
-      visit ('/')
-      fill_in "Player1", :with => "Joe"
-      click_on 'Go fight'
+      sign_in_and_play
       expect(page).to have_content 'Joe'
     end
   end
@@ -22,7 +20,7 @@ end
 describe "View hit points" do
   feature "see hitpoints" do
     scenario "view the hitpoints of a player" do
-      visit ('/fight')
+      sign_in_and_play
       expect(page).to have_content 'HP:100'
     end
   end
